@@ -7,7 +7,10 @@ let initialState = {
 function reducer(state = initialState, action) {
   console.log("action :", action);
   if (action.type === "INCREMENT") {
-    return { ...state, count: state.count + action.payload.num };
+    return { ...state, count: state.count + action.payload.increaseNum };
+  }
+  if (action.type === "DECREMENT") {
+    return { ...state, count: state.count - action.payload.decreaseNum };
   }
   if (action.type === "LOGIN") {
     return {
